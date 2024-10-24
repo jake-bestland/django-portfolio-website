@@ -31,15 +31,15 @@ def contact(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
-            content = form.cleaned_data['content']
+            message = form.cleaned_data['message']
 
             hmtl = render_to_string('projects/emails/contact_form.html', {
                 'name': name,
                 'email': email,
-                'content': content
+                'message': message
             })
 
-            send_mail('Message from Portfolio contact page.', 'This is the message', email, ['beja0405@gmail.com'], html_message = hmtl)
+            send_mail('Message from Portfolio contact page.', 'This is the message', email, ['jake.bestland@gmail.com'], html_message = hmtl)
 
             return redirect('/contact')
         
