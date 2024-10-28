@@ -32,7 +32,9 @@ class Project(models.Model):
     description = models.TextField()
     skill = models.ManyToManyField(Skill, help_text="Select a skill used for this project.")
     slug = models.SlugField(unique=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/')
+    link = models.URLField(null=True, blank=True)
+    highlight = models.BooleanField(default=False)
     
 
     def save(self, *args, **kwargs):

@@ -7,10 +7,15 @@ from django.template.loader import render_to_string
 
 # Create your views here.
 def homepage(request):
+    projects = Project.objects.all()
+    # highlights = Project.objects.filter(highlight__exact=True)
     context = {
-
+        'projects': projects,
+        # 'highlights': highlights
     }
-    return render(request, 'projects/homepage.html', context)
+
+
+    return render(request, 'projects/homepage.html', context=context)
 
 # class RecentProjectListView(generic.ListView):
 #     model = Project
