@@ -6,6 +6,12 @@ from django.db.models.functions import Lower
 
 # Create your models here.
 
+class AboutMe(models.Model):
+    """Model representing About Me information"""
+    tag_line_text = models.CharField(max_length=200)
+    main_text = models.TextField()
+    
+
 class Skill(models.Model):
     """Model representing technology used for a Project."""
     name = models.CharField(max_length=100, unique=True)

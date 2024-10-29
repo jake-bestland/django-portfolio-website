@@ -5,17 +5,17 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light"><strong>{{ projects.title }}</strong></h1>
-            <img src="{{ projects.image.url }}" alt="{{ project.image }}" width="100%" height="75%">
+            <h1 class="fw-light"><strong>{{ project.title }}</strong></h1>
+            <img src="{{ project.image.url }}" alt="{{ project.image }}" width="100%" height="75%">
             <h4>About the project:</h4>
-            <p class="lead text-body-secondary">{{ projects.description }}</p>
+            <p class="lead text-body-secondary">{{ project.description }}</p>
             <h4>Built with:</h4>
             <p>
-                {% for skill in projects.skills_as_list %}
+                {% for skill in project.skills_as_list %}
                 <span class="badge rounded-pill text-bg-info">{{ skill }}</span>
                 {% endfor %}
             </p>
-            <a href="{{ projects.link }}" class="btn btn-primary">Project Link</a>
+            <a href="{{ project.link }}" class="btn btn-primary">Project Link</a>
           </div>
         </div>
       </section>

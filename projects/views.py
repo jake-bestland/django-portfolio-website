@@ -1,25 +1,13 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
-from .models import Project
-from django.views import generic
+from .models import Project, Skill, AboutMe
 from .forms import ContactForm
 from django.template.loader import render_to_string
 
 # Create your views here.
 def homepage(request):
     projects = Project.objects.all()
-    # highlights = Project.objects.filter(highlight__exact=True)
-    context = {
-        'projects': projects,
-        # 'highlights': highlights
-    }
-
-
-    return render(request, 'projects/homepage.html', context=context)
-
-# class RecentProjectListView(generic.ListView):
-#     model = Project
-#     # template_name =
+    return render(request, 'projects/homepage.html', {'projects': projects})
 
 def index(request):
     projects = Project.objects.all()
@@ -27,7 +15,7 @@ def index(request):
 
 def detail(request, slug):
     project = Project.objects.get(slug=slug)
-    return render(request, 'projects/detail.html', {'projects': project})
+    return render(request, 'projects/detail.html', {'project': project})
 
 def contact(request):
     if request.method == 'POST':
@@ -53,4 +41,10 @@ def contact(request):
     return render(request, 'projects/contact.html', {'form': form})
 
 def about(request):
-    return render(request, 'projects/about.html')
+    skills = Skill.objects.all()
+    text = AboutMe.objects.get(id=1)
+    context = {
+        'skills': skills,
+        'text': text
+    }
+    return render(request, 'projects/about.html', context=context)
