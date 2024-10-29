@@ -2,7 +2,15 @@
 {% load static %}
 {% block content %}
 
-<h1><u>Projects</u></h1>
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"><strong>Projects</strong></h1>
+            <p class="lead text-body-secondary">Check out the projects I've been working on.</p>
+        </div>
+    </div>
+</section>
+
 <div class="row">
 {% for project in projects %}
     <div class="card mb-3" style="max-width: 540px;">
