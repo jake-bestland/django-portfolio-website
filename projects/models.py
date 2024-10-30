@@ -37,8 +37,9 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     skill = models.ManyToManyField(Skill, help_text="Select a skill used for this project.")
-    slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to='images/')
+    slug = models.SlugField(unique=True, null=True, blank=True)
+    preview_image = models.ImageField(upload_to='images/previews/', null=True, blank=True)
+    animated_gif = models.ImageField(upload_to='images/gifs/', null=True, blank=True)
     link = models.URLField(null=True, blank=True)
     highlight = models.BooleanField(default=False)
     

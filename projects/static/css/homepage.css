@@ -8,3 +8,18 @@
 .title1{
     font-family: 'sans-serif';
 }
+
+/* Styling the container to switch images on hover */
+.gif-container img.preview {
+    display: block;
+}
+.gif-container img.animated {
+    display: none;
+}
+/* Show the GIF and hide the preview on hover */
+.gif-container:hover img.preview {
+    display: none;
+}
+.gif-container:hover img.animated {
+    display: block;
+}
