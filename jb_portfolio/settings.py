@@ -25,12 +25,12 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q(qhy^8er(y(bzivfw*o2)nek%!h+l%d&!_6qpk-2ci5i9$^+z'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '35.153.170.78']
+ALLOWED_HOSTS = ['127.0.0.1', '35.153.170.78', 'localhost']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -39,6 +39,11 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'jake.bestland@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+SPOTIFY_REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI")
+
 
 # Application definition
 
@@ -51,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'projects',
     'rest_framework',
+    'music',
 ]
 
 MIDDLEWARE = [

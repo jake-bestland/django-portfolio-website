@@ -18,10 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from music import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('projects.urls')),
+    path('spotify/login/', views.spotify_auth, name='spotify_auth'),
+    path('spotify/callback/', views.spotify_callback, name='spotify_callback'),
+    # path('profile/', views.get_user_profile, name='profile'),
+    path('playlist/', views.get_playlist, name='playlist')
 ]
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
