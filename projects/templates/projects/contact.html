@@ -36,30 +36,37 @@
 
 <form method="post" action=".">
     {% csrf_token %}
-    <fieldset>
-        {% for field in form %}
-            {% if field.errors %}
-                <div class="control-group error">
-                    <span class="input-group-text">{{ field.label }}:</span> 
-                    <div class="controls">{{ field }}
-                        <span class="help-inline">
-                            {% for error in  field.errors %}{{ error }}{% endfor %}
-                        </span>
-                    </div>
-                </div>
-            {% else %}
-                <div class="control-group mb-3">
-                    <span class="input-group-text fs-4" style="white-space: pre">{{ field.label }} :  {{ field }}</span> 
-                        {% if field.help_text %}
-                            <p class="help-inline"><small>{{ field.help_text }}</small></p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <fieldset>
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <div class="control-group error">
+                                <span class="input-group-text">{{ field.label }}:</span> 
+                                <div class="controls">{{ field }}
+                                    <span class="help-inline">
+                                        {% for error in  field.errors %}{{ error }}{% endfor %}
+                                    </span>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="control-group mb-3">
+                                <span class="input-group-text fs-4" style="white-space: pre">{{ field.label }} :  {{ field }}</span> 
+                                    {% if field.help_text %}
+                                        <p class="help-inline"><small>{{ field.help_text }}</small></p>
+                                    {% endif %}
+                            </div>
                         {% endif %}
+                    {% endfor %}
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" >Submit</button>
                 </div>
-            {% endif %}
-        {% endfor %}
-    </fieldset>
-    <div class="form-actions">
-        <button type="submit" class="btn btn-primary" >Submit</button>
+            </div>
+        </div>
     </div>
+
 
     <!-- {{ form.as_p }} -->
     
