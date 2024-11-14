@@ -12,7 +12,7 @@ sp_oauth = SpotifyOAuth(
     client_id=settings.SPOTIFY_CLIENT_ID,
     client_secret=settings.SPOTIFY_CLIENT_SECRET,
         redirect_uri=settings.SPOTIFY_REDIRECT_URI,
-        scope='user-read-private user-read-email user-top-read playlist-read-private'
+        scope='user-read-private user-read-email user-top-read playlist-read-private user-read-playback-state user-modify-playback-state'
 )
 
 def get_spotify_client():
@@ -35,14 +35,34 @@ def spotify_callback(request):
     # Redirect to any view where you need to use Spotify API after successful login
     return redirect('/')
 
-# def get_user_profile(request):
-#     token = request.session.get('spotify_token')
-#     if token:
-#         sp =spotipy.Spotify(auth=token)
-#         user = sp.current_user()
-#         return render(request, 'profile.html', {'user': user})
-#     else:
-#         return redirect('spotify_login')
+def get_user_profile(request):
+    spotify = get_spotify_client()
+    if not spotify:
+        return redirect('spotify_auth')  # Redirect to auth if no valid token
+    
+    try:
+        user = spotify.current_user()
+        top_artists = spotify.current_user_top_artists(limit=5, time_range='long_term')
+        top_tracks = spotify.current_user_top_tracks(limit=5, time_range='long_term')
+
+        context = {
+            'user': user,
+            'top_artists': top_artists,
+            'top_tracks': top_tracks,
+        }
+
+        # with open("top_artists.json", "w") as art:
+        #     json.dump(top_artists, art, indent=4)
+
+        # with open("top_tracks.json", "w") as tt:
+        #     json.dump(top_tracks, tt, indent=4)
+
+        # with open("user.json", "w") as use:
+        #     json.dump(user, use, indent=4)
+
+        return render(request, 'profile.html', context=context)
+    except spotipy.exceptions.SpotifyException as e:
+        return HttpResponse(f"Spotify error: {e}", status=400)
     
 
 def get_playlist(request):

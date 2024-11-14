@@ -1,9 +1,58 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filters %}
 {% block content %}
 
-<h1>It is working!</h1>
 
-{{ results }}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"><strong>Spotify Profile</strong></h1>
+            <p class="lead text-body-secondary">{{ text.tag_line_text }}</p>
+        </div>
+    </div>
+</section>
+
+<div class="container text-center">
+    <div class="row justify-content-evenly">
+        <div class="col-4">
+            <h2 class="fw-light"><strong>Top Artists:</strong></h2><br>
+            <ul>
+                {% for item in top_artists.items %}
+                <li class="list-group-item">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <img src="{{ item.images.2.url }}" alt="Artist_img" height="64" width="64">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <div class="d-flex justify-content-start fw-medium">{{ item.name }}</div>
+                        </div>
+                    </div>
+                </li><br>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-4">
+            <h2 class="fw-light"><strong>Top Tracks:</strong></h2><br>
+            <ul>
+                {% for item in top_tracks.items %}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="flex-shrink-0">
+                        <img src="{{ item.album.images.2.url }}" alt="Album_img">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <div class="fw-bold d-flex justify-content-start">{{ item.name }}</div>
+                        <p class="text-start text-truncate fw-light" style="max-width: 250px;">{{ item.artists.0.name }} - {{ item.album.name }}</p>
+                    </div>
+                    <span>{{ item.duration_ms|ms_to_min_sec }}</span>
+                </li><br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock %}
