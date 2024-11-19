@@ -8,22 +8,6 @@
     <title>Jake Bestland</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-      /* Styling the container to switch images on hover */
-      .gif-container img.preview {
-          display: block;
-      }
-      .gif-container img.animated {
-          display: none;
-      }
-      /* Show the GIF and hide the preview on hover */
-      .gif-container:hover img.preview {
-          display: none;
-      }
-      .gif-container:hover img.animated {
-          display: block;
-      }
-    </style>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'projects/homepage.css' %}">
 </head>
@@ -51,10 +35,26 @@
       </ul>
     </div>
   </nav>
-
 {% block content %}
     
 {% endblock %}
 
 </body>
+<footer class="d-flex flex-wrap justify-content-between align-items-center my-5 border-top">
+  <p class="col-md-4 mb-0">© 2024 Jake Bestland</p>
+  <ul class="nav col-md-4 justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'projects:homepage' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'projects:about' %}">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'projects:projects' %}">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'projects:contact' %}">Contact</a>
+    </li>
+  </ul>
+</footer>
 </html>

@@ -38,3 +38,11 @@ body {
 a{
     color: #0FFCBE;
 }
+
+footer {
+    position: relative;
+    margin-top: -180px;
+    /* negative value of footer height */
+    height: 50px;
+    clear: both;
+  }
