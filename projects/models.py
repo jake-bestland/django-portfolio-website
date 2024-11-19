@@ -25,6 +25,7 @@ class Skill(models.Model):
         return reverse('skill-detail', args=[str(self.id)])
     
     class Meta:
+        ordering = ['name']
         constraints = [
             UniqueConstraint(
                 Lower('name'),

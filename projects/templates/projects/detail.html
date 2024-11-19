@@ -13,14 +13,14 @@
               <img src="{{ project.animated_gif.url }}" class="img-fluid animated" alt="Animated GIF" width="100%" height="75%">
             </div>
             <h4>About the project:</h4>
-            <p class="lead text-body-secondary">{{ project.description }}</p>
+            <p class="lead">{{ project.description }}</p>
             <h4>Built with:</h4>
             <p>
                 {% for skill in project.skills_as_list %}
-                <span class="badge rounded-pill text-bg-info">{{ skill }}</span>
+                <span class="badge rounded-pill" style="background-color: #0FFCBE; color: #106EBE;">{{ skill }}</span>
                 {% endfor %}
             </p>
-            <a href="{{ project.link }}" class="btn btn-primary">Project Link</a>
+            <a href="{{ project.link }}" class="btn btn-primary" style="background-color: #0FFCBE; color: #106EBE;">Project Link</a>
           </div>
         </div>
       </div>
