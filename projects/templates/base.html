@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,20 +25,16 @@
       }
     </style>
     {% load static %}
-    <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'projects/homepage.css' %}">
 </head>
 <body>
-  <nav class="navbar" style="background-color: lightsteelblue;">
+  <nav class="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'projects:homepage' %}">
-        <img src="{% static 'img/Headshots.png' %}" alt="Logo" width="50" height="60" class="d-inline-block text-fs-2">
+        <img src="{% static 'projects/img/Headshots.png' %}" alt="Logo" width="50" height="60" class="d-inline-block text-fs-2">
         <strong>Jake Bestland</strong>
         
       </a>
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button> -->
       <ul class="nav justify-content-end">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'projects:homepage' %}">Home</a>
@@ -53,10 +51,10 @@
       </ul>
     </div>
   </nav>
-  <div class="container">
-  {% block content %}
+
+{% block content %}
     
-  {% endblock %}
-  </div>
+{% endblock %}
+
 </body>
 </html>

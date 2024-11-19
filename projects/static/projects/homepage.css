@@ -1,12 +1,15 @@
 .navbar{
-    background-color: #F6F5D7;
+    background-color: #106EBE;
+    color: #0FFCBE;
     margin:0%;
     padding: 0%;
-    border: 1px solid rgb(0, 0, 0);
+
 }
 
-.title1{
-    font-family: 'sans-serif';
+body {
+    background-color: #106EBE;
+    color: #0FFCBE;
+    font-family: "Gill Sans", sans-serif;
 }
 
 /* Styling the container to switch images on hover */
@@ -22,4 +25,16 @@
 }
 .gif-container:hover img.animated {
     display: block;
+}
+
+.nav-link {
+    color: #0FFCBE;
+}
+
+.navbar-brand{
+    color: #0FFCBE;
+}
+
+a{
+    color: #0FFCBE;
 }

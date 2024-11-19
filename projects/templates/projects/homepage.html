@@ -2,12 +2,12 @@
 {% load static %}
 {% block content %}
 
-<section class="py-5 text-center container">
+<div class="px-4 py-5 text-center bg-gradient">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Hi, I'm Jake Bestland</h1>
-            <p class="lead text-body-secondary">I'm front-end web developer and python coder</p>
-            <p>
+            <h1 class="fw-semibold">Hi, I'm Jake Bestland</h1>
+            <p class="lead fw-normal fs-4">I'm front-end web developer and python coder</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-center">
             <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="https://github.com/jake-bestland" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github fs-2" viewBox="0 0 16 16">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
@@ -28,10 +28,10 @@
                     <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
                   </svg>
             </a>
-            </p>
+        </div>
         </div>
     </div>
-</section>
+</div>
 
 <br>
 
@@ -42,20 +42,20 @@
             {% for project in projects %}
                 {% if project.highlight %}
                     <div class="col">
-                        <div class="card h-100">
+                        <div class="card h-100" style="background-color: #0FFCBE;">
                             <div class="gif-container d-inline-block">
                                 <!-- Static Preview Image -->
                                 <img src="{{ project.preview_image.url }}" class="img-fluid preview" alt="Static Preview" width="100%" height="300px">
                                 <!-- Animated GIF -->
                                 <img src="{{ project.animated_gif.url }}" class="img-fluid animated" alt="Animated GIF" width="100%" height="300px">
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="background-color: #0FFCBE; color: #106EBE;">
                                 <h5 class="card-title">{{ project.title }}</h5>
                                 <p class="card-text">{{ project.description|capfirst|truncatechars:50 }}.</p>
-                                <p class="card-text"><small class="text-body-secondary"><strong>Built with: </strong>{{ project.skill.all|join:", " }}</small></p>
+                                <p class="card-text"><small><strong>Built with: </strong>{{ project.skill.all|join:", " }}</small></p>
                             </div>
-                            <div class="card-footer">
-                                <a href="{% url 'projects:project_detail' project.slug %}" class="btn btn-primary">Read More</a>
+                            <div class="card-footer" style="background-color: #0FFCBE; color: #106EBE;">
+                                <a href="{% url 'projects:project_detail' project.slug %}" class="btn btn-primary" style="background-color: #106EBE; color: #0FFCBE;">Read More</a>
                             </div>
                         </div>
                     </div>

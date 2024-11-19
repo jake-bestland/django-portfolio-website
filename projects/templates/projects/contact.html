@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 
-<section class="py-5 text-center container">
+<div class="px-4 py-5 text-center bg-gradient">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light"><strong>Contact</strong></h1>
-            <p class="lead text-body-secondary">Get in touch with me via social media or send me an email.</p>
+            <p class="lead">Get in touch with me via social media or send me an email.</p>
             <p>
                 <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="https://github.com/jake-bestland" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github fs-2" viewBox="0 0 16 16">
@@ -31,7 +31,7 @@
                 </p>
         </div>
     </div>
-</section>
+</div>
 
 
 <form method="post" action=".">
@@ -43,7 +43,7 @@
                     {% for field in form %}
                         {% if field.errors %}
                             <div class="control-group error">
-                                <span class="input-group-text">{{ field.label }}:</span> 
+                                <span class="input-group-text" style="background-color: #0FFCBE;">{{ field.label }}:</span> 
                                 <div class="controls">{{ field }}
                                     <span class="help-inline">
                                         {% for error in  field.errors %}{{ error }}{% endfor %}
@@ -52,7 +52,7 @@
                             </div>
                         {% else %}
                             <div class="control-group mb-3">
-                                <span class="input-group-text fs-4" style="white-space: pre">{{ field.label }} :  {{ field }}</span> 
+                                <span class="input-group-text fs-4" style="white-space: pre; background-color: #0FFCBE; color: #106EBE;">{{ field.label }} :  {{ field }}</span> 
                                     {% if field.help_text %}
                                         <p class="help-inline"><small>{{ field.help_text }}</small></p>
                                     {% endif %}
@@ -61,7 +61,7 @@
                     {% endfor %}
                 </fieldset>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary" >Submit</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #0FFCBE; color: #106EBE;">Submit</button>
                 </div>
             </div>
         </div>
