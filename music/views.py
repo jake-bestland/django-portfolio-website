@@ -51,15 +51,6 @@ def get_user_profile(request):
             'top_tracks': top_tracks,
         }
 
-        # with open("top_artists.json", "w") as art:
-        #     json.dump(top_artists, art, indent=4)
-
-        # with open("top_tracks.json", "w") as tt:
-        #     json.dump(top_tracks, tt, indent=4)
-
-        # with open("user.json", "w") as use:
-        #     json.dump(user, use, indent=4)
-
         return render(request, 'profile.html', context=context)
     except spotipy.exceptions.SpotifyException as e:
         return HttpResponse(f"Spotify error: {e}", status=400)

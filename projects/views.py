@@ -3,21 +3,23 @@ from django.shortcuts import render, redirect
 from .models import Project, Skill, AboutMe
 from .forms import ContactForm
 from django.template.loader import render_to_string
+from django.views import generic
 
-# Create your views here.
-def homepage(request):
-    projects = Project.objects.all()
-    return render(request, 'projects/homepage.html', {'projects': projects})
 
-def index(request):
-    projects = Project.objects.all()
-    return render(request, 'projects/index.html', {'projects': projects})
+class HomePageView(generic.ListView):
+    model = Project
+    template_name = 'projects/homepage.html'
 
-def detail(request, slug):
-    project = Project.objects.get(slug=slug)
-    return render(request, 'projects/detail.html', {'project': project})
+class ProjectIndexView(generic.ListView):
+    model = Project
+    template_name = 'projects/index.html'
+
+class ProjectDetailView(generic.DetailView):
+    model = Project
+    template_name = 'projects/detail.html'
 
 def contact(request):
+    """View function for sending a email through contact form."""
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
@@ -41,6 +43,7 @@ def contact(request):
     return render(request, 'projects/contact.html', {'form': form})
 
 def about(request):
+    """View function for about me page."""
     skills = Skill.objects.all()
     text = AboutMe.objects.get(id=1)
     context = {

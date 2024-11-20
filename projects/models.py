@@ -10,6 +10,8 @@ class AboutMe(models.Model):
     """Model representing About Me information"""
     tag_line_text = models.CharField(max_length=200)
     main_text = models.TextField()
+    # add resume link
+    # resume = models.FileField(upload_to='files/', null=True, blank=True)
     
 
 class Skill(models.Model):
@@ -35,6 +37,7 @@ class Skill(models.Model):
         ]
 
 class Project(models.Model):
+    """Model representing a Project."""
     title = models.CharField(max_length=100)
     description = models.TextField()
     skill = models.ManyToManyField(Skill, help_text="Select a skill used for this project.")
@@ -57,13 +60,14 @@ class Project(models.Model):
     
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this project."""
-        return reverse('project-detail', args=[str(self.id)])
+        return reverse('project-detail', args=[str(self.slug)])
     
     def display_skill(self):
         """Create a string for the Skill.  This is required to display the skill in Admin."""
         return ', '.join(skill.name for skill in self.skill.all())
     
     def skills_as_list(self):
+        """Returns the name of each Skill used for this project."""
         return (skill.name for skill in self.skill.all())
     
     display_skill.short_description = 'Skill'
