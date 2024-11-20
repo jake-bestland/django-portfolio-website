@@ -26,7 +26,8 @@ urlpatterns = [
     path('spotify/login/', views.spotify_auth, name='spotify_auth'),
     path('spotify/callback/', views.spotify_callback, name='spotify_callback'),
     path('profile/', views.get_user_profile, name='profile'),
-    path('playlist/', views.get_playlist, name='playlist')
+    path('playlist/', views.get_playlist, name='playlist'),
+    path('api/', include('api.urls')),
 ]
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

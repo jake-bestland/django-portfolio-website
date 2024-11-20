@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'projects',
     'rest_framework',
     'music',
+    'api',
 ]
 
 MIDDLEWARE = [
