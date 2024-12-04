@@ -29,7 +29,7 @@
                         <div class="col-md-8" style="background-color: #0FFCBE; color: #106EBE;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ project.title }}</h5>
-                                <p class="card-text">{{ project.description|capfirst|truncatechars:50 }}.</p>
+                                <p class="card-text">{{ project.description|capfirst|truncatechars:200 }}.</p>
                                 <p class="card-text"><small><strong>Built with: </strong>{{ project.skill.all|join:", " }}</small></p>
                                 <a href="{% url 'projects:project_detail' project.slug %}" class="btn btn-primary" style="background-color: #106EBE; color: #0FFCBE;">Read More</a>
                             </div>

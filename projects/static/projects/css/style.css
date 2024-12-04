@@ -1,0 +1,105 @@
+/* Ensure the html and body take up full height and allow scrolling */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto; /* Ensure scrolling when needed */
+}
+
+/* Flexbox layout to manage footer placement */
+body {
+    background-color: #106EBE;
+    color: #0FFCBE;
+    font-family: "Gill Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content grows to fill available space */
+.content {
+    flex: 1;
+    overflow: auto; /* Allow scrolling for overflowing content */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #106EBE;
+    color: #0FFCBE;
+    margin: 0;
+    padding: 10px;
+}
+
+.navbar-brand,
+.nav-link,
+a {
+    color: #0FFCBE;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #333; /* Darker background for contrast */
+    color: #0FFCBE;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+    border-top: 1px solid;
+}
+
+/* Links inside the footer */
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer a {
+    color: #0FFCBE;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* GIF container for hover animations */
+.gif-container img.preview {
+    display: block;
+}
+
+.gif-container img.animated {
+    display: none;
+}
+
+.gif-container:hover img.preview {
+    display: none;
+}
+
+.gif-container:hover img.animated {
+    display: block;
+}
+
+/* .hr {
+    border: none;
+    border-top: 5px solid #0FFCBE;
+    color: #0FFCBE;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+.hr::after {
+    background: #106EBE;
+    content: 'Some of my latest work';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+} */
