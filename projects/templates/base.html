@@ -58,21 +58,24 @@
   </div>
 
   <footer class="footer">
-    <p>© 2024 Jake Bestland</p>
-    <ul>
-      <li class="nav-item">
-        <a href="{% url 'projects:homepage' %}">Home</a>
-      </li>
-      <li>
-        <a href="{% url 'projects:about' %}">About</a>
-      </li>
-      <li>
-        <a href="{% url 'projects:projects' %}">Projects</a>
-      </li>
-      <li>
-        <a href="{% url 'projects:contact' %}">Contact</a>
-      </li>
-    </ul>
+    <div class="d-flex justify-content-between">
+      <p>© 2024 Jake Bestland</p>
+      <p><em><small>Site coded in Visual Studio Code. Built with Django and Bootstrap, deployed on AWS.</small></em></p>
+      <ul>
+        <li class="nav-item">
+          <a href="{% url 'projects:homepage' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'projects:about' %}">About</a>
+        </li>
+        <li>
+          <a href="{% url 'projects:projects' %}">Projects</a>
+        </li>
+        <li>
+          <a href="{% url 'projects:contact' %}">Contact</a>
+        </li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>

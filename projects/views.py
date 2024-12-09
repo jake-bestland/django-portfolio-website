@@ -4,6 +4,7 @@ from .models import Project, Skill, AboutMe
 from .forms import ContactForm
 from django.template.loader import render_to_string
 from django.views import generic
+from django.http import FileResponse, Http404
 
 
 class HomePageView(generic.ListView):
@@ -51,3 +52,9 @@ def about(request):
         'text': text
     }
     return render(request, 'projects/about.html', context=context)
+
+def view_pdf(request):
+    try:
+        return FileResponse(open('media/files/resume.pdf', 'rb'), content_type='application/pdf')
+    except FileNotFoundError:
+        raise Http404()

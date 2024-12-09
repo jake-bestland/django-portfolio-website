@@ -9,6 +9,7 @@
         <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-normal"><strong>About Me</strong></h1>
             <p class="lead">{{ text.tag_line_text }}</p>
+            <a href="{% url 'projects:view_pdf' %}" class="btn btn-primary" style="background-color: #0FFCBE; color: #106EBE;" target="_blank">Resume</a>
         </div>
     </div>
 </div>
@@ -20,7 +21,7 @@
             <p class="lead text-start fs-5" style="white-space: pre-wrap">{{ text.main_text }}</p>
         </div>
         <div class="col-4">
-            <h2 class="fw-light"><strong>My Skills:</strong></h2><br>
+            <h2 class="fw-light"><strong>Skills:</strong></h2><br>
             <p class="fs-3 lh-lg">
                 {% for skill in skills %}
                 <span class="badge rounded-pill" style="background-color: #0FFCBE; color: #106EBE;">{{ skill.name }}</span>

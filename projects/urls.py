@@ -11,4 +11,5 @@ urlpatterns = [
     path('projects/<slug:slug>', views.ProjectDetailView.as_view(), name='project_detail'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
+    path('resume/', views.view_pdf, name='view_pdf'),
 ]
