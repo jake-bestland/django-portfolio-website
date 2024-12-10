@@ -8,7 +8,9 @@ idna==3.10
 packaging==24.1
 pillow==11.0.0
 python-dotenv==1.0.1
+redis==5.2.0
 requests==2.32.3
+spotipy==2.24.0
 sqlparse==0.5.1
 urllib3==2.2.3
 whitenoise==6.7.0
