@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '35.153.170.78', 'localhost', 'jake-bestland.xyz']
+ALLOWED_HOSTS = ['127.0.0.1', '35.153.170.78', 'localhost', 'jake-bestland.xyz', 'www.jake-bestland.xyz']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
