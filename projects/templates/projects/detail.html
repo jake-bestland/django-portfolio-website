@@ -7,10 +7,14 @@
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-normal"><strong>{{ project.title }}</strong></h1>
             <div class="gif-container d-inline-block">
+              {% if project.preview_image %}
               <!-- Static Preview Image -->
               <img src="{{ project.preview_image.url }}" class="img-fluid preview" alt="Static Preview" width="100%" height="75%">
+              {% endif %}
+              {% if project.animated_gif %}
               <!-- Animated GIF -->
               <img src="{{ project.animated_gif.url }}" class="img-fluid animated" alt="Animated GIF" width="100%" height="75%">
+              {% endif %}
             </div>
             <h4>About the project:</h4>
             <p class="lead">{{ project.description }}</p>
@@ -20,7 +24,9 @@
                 <span class="badge rounded-pill" style="background-color: #0FFCBE; color: #106EBE;">{{ skill }}</span>
                 {% endfor %}
             </p>
+            {% if project.link %}
             <a href="{{ project.link }}" class="btn btn-primary" style="background-color: #0FFCBE; color: #106EBE;" target="_blank">Project Link</a>
+            {% endif %}
           </div>
         </div>
       </div>
