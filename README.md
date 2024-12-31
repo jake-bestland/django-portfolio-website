@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <a href="http://jake-bestland.xyz">
-  <img src="./projects/static/projects/img/Headshots.png">
+  <img src="./projects/static/projects/img/Headshots.png" alt="Headshot" width="200">
   </a>
   <br>
   My Portfolio Website
