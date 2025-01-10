@@ -14,9 +14,7 @@
 
 ## Introduction
 
-I built this website to showcase all the projects that I’ve been working on and give a little insight as to who I am.
-I aimed to display a working knowledge of HTML, CSS, Python, Django, and RESTful methods to develop frontend design, sending forms, and the API framework.
-This website was built with Python 3.11.9, Django 5.1.2, and other packages found in the `requirements.txt` file.
+I created this website to showcase my projects and offer insight into who I am. It demonstrates my skills in HTML, CSS, Python, Django, and RESTful methods for frontend design, form handling, and APIs. Built with Python 3.11.9, Django 5.1.2, and dependencies listed in the `requirements.txt` file.
 
 ## Key Features
 
