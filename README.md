@@ -23,7 +23,7 @@
 </h4>
 
 
-![screenshot](https://github.com/jake-bestland/django-portfolio-website/blob/main/media/images/gifs/Profile_website_gif.gif)
+[![screenshot](https://github.com/jake-bestland/django-portfolio-website/blob/main/media/images/gifs/Profile_website_gif.gif)](http://jake-bestland.xyz)
 
 ## 👋🏻 Introduction
 
