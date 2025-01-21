@@ -39,3 +39,12 @@ I created this website to showcase my projects and offer insight into who I am. 
 * 🔗 Project links/ live links for each project.
 * 📝 Contact form.
 
+## 🛠 Project Status
+
+This project is currently deployed on AWS through an EC2 instance.  This website will be updated when I create/start new projects.  I also plan on building out my spotify profile! 
+
+## 📜 Credits
+
+This website was created as part of my Capstone project, following the completion of a <img src="https://avatars.githubusercontent.com/u/43579891?s=200&v=4" width="20">[CodingNomads](https://codingnomads.com/) bootcamp where I learned `Python` and `Djagno`.
+
+To help build my `Spotify` profile, I used the [Spotipy](https://spotipy.readthedocs.io/en/2.24.0/#) package and the [Spotify API](https://developer.spotify.com/).
