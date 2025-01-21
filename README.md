@@ -10,10 +10,17 @@
 
 <h4 align="center">My personal website built with Django and bootstrap.</h4>
 
-[![python](https://img.shields.io/badge/Python-3.11.9-1f425f.svg?logo=python)](https://www.python.org/)
-[![django](https://img.shields.io/badge/Django-5.1.2-1f425f.svg?logo=django)](https://www.djangoproject.com/)
-[![bootstrap](https://img.shields.io/badge/Bootstrap-5.3-1f425f.svg?logo=bootstrap)](https://getbootstrap.com/)
-
+<h4 align="center">
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.11.9-1f425f.svg?logo=python" alt="python">
+  </a>
+  <a href="https://www.djangoproject.com/">
+    <img src="https://img.shields.io/badge/Django-5.1.2-1f425f.svg?logo=django" alt="django">
+  </a>
+  <a href="https://getbootstrap.com/">
+    <img src="https://img.shields.io/badge/Bootstrap-5.3-1f425f.svg?logo=bootstrap" alt="bootstrap">
+  </a>
+</h4>
 
 
 ![screenshot](https://github.com/jake-bestland/django-portfolio-website/blob/main/media/images/gifs/Profile_website_gif.gif)
